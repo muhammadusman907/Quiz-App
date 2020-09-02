@@ -220,6 +220,7 @@ function Active(){
 }
 
 // now get value of active class and match with question's correct answers (object)
+var wrong_arr = [];
 var score = 0;
 function add_score(e){
  var count_result = document.getElementsByClassName('active');
@@ -229,13 +230,25 @@ function add_score(e){
     //  save score on localStorage
      localStorage.setItem('score',score);
     }
+    else if(count_result[i].firstChild.nodeValue !== questions[e].correct){
+      var wrong_ans =  count_result[i].firstChild.nodeValue;
+      wrong_arr.push(wrong_ans),
+      console.log(wrong_arr);
+      localStorage.setItem('wrong_answers',wrong_arr);
+    }
 }
 }
  
 // get username from welcome page and save in local storage 
 function user_name(){
     var user_name = document.getElementById('user_name').value;
+    if(user_name === ""){
+        alert('write your username please ....');
+        students();
+    }
+    else{
     localStorage.setItem('userName',user_name);
+    }
 }
 
 // now show the result to user on result page 
@@ -266,9 +279,14 @@ function result_show(){
         text_value = "Try Again Later ..."
     }
     // show results on given location on result page 
-    var show_score = `Your Score is ${value}`
+    var show_score = `Your Score is ${value} / 90`
     var get_score = document.getElementById('user-score');
     get_score.innerHTML = show_score;
+
+    // show wrong answers 
+    var wrong_answers = document.getElementById('wrong-answers');
+    wrong_answers.innerHTML = localStorage.getItem('wrong_answers');
+
     // push remarks on behalf of given score 
     var push_text = document.getElementById('remarks');
     push_text.innerHTML = text_value;
