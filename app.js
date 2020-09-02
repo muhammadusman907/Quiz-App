@@ -194,7 +194,7 @@ function count(){
 // questions and options counter (add questions and options to student page)
 function show(e){
     var que = document.getElementById('Question');
-    que.innerHTML = `<h2 style="color: darkgreen;"> ${questions[e].question} </h2>
+    que.innerHTML = `<h2> ${questions[e].question} </h2>
     <ul class="list"> 
     <li class="option">${questions[e].options[0]}</li>
     <li class="option">${questions[e].options[1]}</li>

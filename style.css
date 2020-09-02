@@ -7,7 +7,7 @@ body{
     background-size: 100%;
 }
 h1{
-    color: green;
+    color: white;
 }
 .parent{
     margin: 10%;
@@ -49,11 +49,11 @@ h1{
     width: 210px;
 }
 .admin_input:hover{
-    background-color: darkgreen;
+    background-color: turquoise;
 }
 .admin_input:hover::placeholder{
     color: white;
-    background-color: darkgreen;
+    background-color: turquoise;
 }
 #question{
     margin: 5px;
@@ -84,9 +84,6 @@ h1{
 .active{
     color: white;
     background-color: green;
-}
-.child_3{
-    background-color: black;
 }
 
 .parent_2{
