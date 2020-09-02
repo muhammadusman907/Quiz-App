@@ -1,0 +1,144 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-image: url(https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pd19-minty-01-leaf_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=eeb223b13539feb7925af0a1945b5e0c);
+    background-size: 100%;
+}
+h1{
+    color: green;
+}
+.parent{
+    margin: 10%;
+    color: white;
+    display: inline-block;
+    border-radius: 4px;
+    width: 80%;
+    text-align: center;
+}
+.child{
+    display: inline;
+}
+.btn{
+    margin: 6px;
+    padding: 6px;
+    width: 150px;
+    color:white;
+    background-color: darkgreen;
+    transition: 0.5s;
+    border: 2px;
+    border-radius: 4px;
+    outline: none;
+}
+.btn:hover{
+    background-color: white;
+    color: darkgreen;
+    box-shadow: 0 12px 16px 0 white, 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.btn:active{
+    transform: translateY(4px);
+}
+
+.admin_input{
+    margin: 10px;
+    height: 20px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    width: 210px;
+}
+.admin_input:hover{
+    background-color: darkgreen;
+}
+.admin_input:hover::placeholder{
+    color: white;
+    background-color: darkgreen;
+}
+#question{
+    margin: 5px;
+    width: 100%;
+    border-radius: 5px;
+}
+#right_answer{
+    width: 10%;
+}
+#username{
+    color: #2980b9!important;
+}
+.option{
+    width: 95%;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    list-style-type: none;
+    border: 2px solid;
+    color: black;
+    background-color: white;
+}
+.child_2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+.active{
+    color: white;
+    background-color: green;
+}
+.child_3{
+    background-color: black;
+}
+
+.parent_2{
+    margin: 0%;
+    padding-top: 10%;
+    color: white;
+    display: inline-block;
+    border-radius: 6px;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+}
+.flip-card {
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    height: 410px;
+    perspective: 2000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+  
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+  
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+  
+.flip-card-front {
+    font-size: 25px;
+    background-color: #bbb;
+    color: black;
+}
+  
+.flip-card-back {
+    font-size: 25px;
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
