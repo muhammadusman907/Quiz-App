@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Quiz App</title>
-</head>
-<body onload="clearStorage(),addArray()" >
+  </head>
+  <body onload="clearStorage(),addArray()">
     <div class="parent">
-            <h2> Welcome to Our Quiz App</h2>
-        <div class="child">
-            <button onclick=admin() class="btn">Login as Admin</button>
-        </div>
-        <div class="child">
-            <button onclick="students()" class="btn">Login as Student</button>
-        </div>
+      <h2>Welcome to Our Quiz App</h2>
+      <div class="child">
+       <a href="admin.html"><button class="btn">Login as Admin</button></a>
+      </div>
+      <div class="child">
+        <a href="student.html"><button class="btn">Login as Student</button></a>
+      </div>
     </div>
- <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

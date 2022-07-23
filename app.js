@@ -3,37 +3,6 @@ function clearStorage(){
     sessionStorage.clear();
     localStorage.clear();
 }
-//   switch to result page 
-function result(){
-    var locate = window.location.href;
-    window.location.assign("result.html");
-}
-// switch  to admin page 
-function admin(){
-    var locate = window.location.href;
-    window.location.assign("admin.html");
-}
-//  switch to welcome page 
-function students(){
-    var locate = window.location.href;
-    window.location.assign("welcome.html");
-}
-// switch to back page 
-function back(){
-    var locate = window.location.href;
-    window.location.assign('index.html');
-}
-// switch to student page 
-function students_page(){
-    var locate = window.location.href;
-    window.location.assign('student.html')
-}
-//  switch to questions page 
-function Questions_page(){
-    var locate = window.location.href;
-    window.location.assign('questions.html')
-}
-
 //  check admin username and password 
 function check(){
     //   admin input values 
