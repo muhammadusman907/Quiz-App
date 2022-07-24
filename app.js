@@ -12,8 +12,8 @@ function check(){
     if(admin_name === "" && admin_pass === ""){
         alert ("write Something ....")
     }
-    else if(admin_name === "arham" && admin_pass === "arham@123"){
-        Questions_page()
+    else if(admin_name === "admin" && admin_pass === "admin@123"){
+        window.location.href = "Insert_questions.html"
     }
     else{
         alert("Wrong Username and Password")
@@ -23,7 +23,7 @@ function check(){
     document.getElementById("admin_password").value = "";
 }
     // admin input question 
-var arham;
+var userInputQuestions;
 function add_Question(){
     // values get from admin input 
     var que = document.getElementById('question').value;
@@ -46,8 +46,8 @@ function add_Question(){
     else{
         alert("Write Question and all Options.....");
     } 
-    // push object to variable arham 
-    arham = new Questions_Obj(que,correct,opts);
+    // push object to variable userInputQuestions 
+    userInputQuestions = new Questions_Obj(que,correct,opts);
     // clear admin input box 
     document.getElementById('question').value = "";
     document.getElementById('option1').value = "";
@@ -58,9 +58,9 @@ function add_Question(){
     // now call addArray function 
     addArray();
 }
-var arrray;
+var questionsArray;
 function addArray(){
-    arrray = [{
+    questionsArray = [{
         question: "Who is the founder Of Pakistan??",
         correct: "Muhammad Ali Jinnah",
         options: [
@@ -143,14 +143,13 @@ function addArray(){
         ]
     }];
     // push object created from admin input to array 
-    arrray.push(arham);
+    questionsArray.push(userInputQuestions);
     // now save this array in localStorage (name: array)
-    localStorage.setItem('array',JSON.stringify(arrray));
+    localStorage.setItem('questionsArray',JSON.stringify(questionsArray));
 }
 
 // now get values of localStorage in variable to show on students 
-var questions = JSON.parse(localStorage.getItem('array'));
-
+var questions = JSON.parse(localStorage.getItem('questionsArray'));
 // Question counter 
 var question_counter = -1;
 var check_result = -2;
@@ -190,8 +189,8 @@ function Active(){
 
 // now get value of active class and match with question's correct answers (object)
 var wrong_arr = [];
-var score = 0;
 function add_score(e){
+    var score = 0;
  var count_result = document.getElementsByClassName('active');
  for(let i = 0; i < count_result.length ; i++){
  if(count_result[i].firstChild.nodeValue === questions[e].correct){
@@ -202,21 +201,20 @@ function add_score(e){
     else if(count_result[i].firstChild.nodeValue !== questions[e].correct){
       var wrong_ans =  count_result[i].firstChild.nodeValue;
       wrong_arr.push(wrong_ans),
-      console.log(wrong_arr);
       localStorage.setItem('wrong_answers',wrong_arr);
     }
 }
 }
  
 // get username from welcome page and save in local storage 
-function user_name(){
+function getUserName(){
     var user_name = document.getElementById('user_name').value;
     if(user_name === ""){
         alert('write your username please ....');
-        students();
     }
     else{
-    localStorage.setItem('userName',user_name);
+        localStorage.setItem('userName',user_name);
+        window.location.href = "quiz.html";
     }
 }
 
@@ -276,7 +274,7 @@ function startTimer(duration, display) {
 
         if (--timer < 0) {
             timer = duration;
-            result();
+            window.location.href = "result.html";
             result_show();
         }
     }, 1000);
